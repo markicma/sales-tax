@@ -34,12 +34,7 @@ function calculateSalesTax(salesData, taxRates) {
   // Implement your code here
   for (entry of salesData) {
     entry["total"] = sumSales(entry.sales);
-
-    for (province in taxRates) {
-      if (province === entry.province) {
-        entry["tax"] = entry.total * ((salesTaxRates[province]));
-      }
-    }
+    entry["tax"] = entry.total * ((salesTaxRates[entry.province]));
   }
 }
 
@@ -63,7 +58,6 @@ function salesTaxReport(salesData, taxRates) {
 }
 
 var results = salesTaxReport(companySalesData, salesTaxRates);
-console.log(results);
 
 /* Expected Results:
 {
