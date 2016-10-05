@@ -23,7 +23,7 @@ var companySalesData = [
 ];
 
 function sumSales(myArray) {
-  total = 0;
+  var total = 0;
   for (element of myArray) {
     total += element;
   }
