@@ -22,16 +22,18 @@ var companySalesData = [
   }
 ];
 
+function sumSales(myArray) {
+  total = 0;
+  for (element of myArray) {
+    total += element;
+  }
+  return total;
+}
+
 function calculateSalesTax(salesData, taxRates) {
   // Implement your code here
   for (entry of salesData) {
-    var total = 0;
-
-    for (revenue of entry.sales) {
-      total += revenue;
-    }
-
-    entry["total"] = total
+    entry["total"] = sumSales(entry.sales);
 
     for (province in taxRates) {
       if (province === entry.province) {
